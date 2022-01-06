@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Localiyo - Feeds</title>
+  <link rel="stylesheet" href="css/feed.css" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+  <link rel="shortcut icon" href="img/newlogo.png" type="image/png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+    crossorigin="anonymous" />
+</head>
+
+<body>
+  <!-- sidebar starts -->
+  <div class="sidebar fixed">
+    <h1><a href="/">Localiyo</a></h1>
+
+    <div class="sidebarOption active">
+      <span class="material-icons"> home </span>
+      <a href="/">
+        <h2>Home</h2>
+      </a>
+    </div>
+
+    <div class="sidebarOption">
+      <span class="material-icons"> post_add </span>
+      <a href="/feed">
+        <h2>Feeds</h2>
+      </a>
+    </div>
+
+    <div class="sidebarOption">
+      <span class="material-icons"> forum </span>
+      <a href="/discussion">
+        <h2>Discussion Forum</h2>
+      </a>
+    </div>
+
+    <div class="sidebarOption">
+      <span class="material-icons"> perm_identity </span>
+      <a href="/profile">
+        <h2>Profile</h2>
+      </a>
+    </div>
+
+    <div class="sidebarOption">
+      <span class="material-icons"> feed </span>
+      <a href="/news">
+        <h2>General News</h2>
+      </a>
+    </div>
+
+    <form action="/logout">
+      <button class="sidebar__local">Sign Out</button>
+    </form>
+
+  </div>
+  <!-- sidebar ends -->
+
+  <!-- feed starts -->
+  <div class="feed">
+
+    <div class="feed__header">
+      <h2>@{{dusername}}</h2>
+    </div>
+
+    <!-- localbox starts -->
+    <div class="localBox" id="localboxid">
+      <h2>Create Post</h2>
+      <form action='/feed' method="POST" enctype="multipart/form-data">
+        <div class="localbox__input">
+          <div class="localboximg">
+            <img src='data:"image/jpeg";base64,{{profilephoto}}' alt="" />
+            {{!-- <img src="img/profile.png" alt="" /> --}}
+          </div>
+          <textarea class="textarea" name="postcontent" placeholder="What's Happening Around You ?"></textarea>
+        </div>
+        <div class="inop">
+          <div class="inputOption">
+            <i style="color: #008a68" class="material-icons"> insert_photo </i>
+            <input type="file" id="inputfile" class="browseimg" multiple name="images">
+          </div>
+          <div class="inputOption1">
+            <button type="submit" class="localBox__localButton">Post</button>
+          </div>
+        </div>
+      </form>
+    </div>
+    <!-- localbox ends -->
+
+
+    {{#each postcontent}}
+    {{#each this as |ritik|}}
+    {{#if content}}
+
+
+    <div class="post" id="postboxid">
+      <div class="post__avatar">
+        {{!-- <img src="img/profile.png" alt="" /> --}}
+        <div class="localboximg">
+          <img src='data:"image/jpeg";base64,{{postuserphoto}}' alt="" />
+        </div>
+      </div>
+      <div class="post__body">
+        <div class="post__header">
+          <div class="post__headerText">
+            <h3>
+              {{username}}
+              <span class="post__headerSpecial">@{{username}}</span>
+              <span class="post__headerSpecial1">{{ritik.sincetime}}</span>
+
+
+            </h3>
+          </div>
+          <div class="post__headerDescription">
+            <p>{{content}}</p>
+            {{#each postimgone}}
+            <div class="postimgdiv">
+              {{!-- <img src="img/profile.png" alt="" /> --}}
+              <img style="width: 370px; margin-top:10px" src='data:"image/jpeg";base64,{{this}}' alt="" />
+            </div>
+
+            {{/each}}
+            <div class="post__footer">
+              <form action="/like" method="POST">
+
+                <input class="likeclass" name="postId" id="postId" type="text" value="{{_id}}" />
+
+                <button class="like-button likebtn" onclick="likefunc()" id="like" type="submit">
+
+                  {{#if islike}}
+
+                  <span class="material-icons" style="color:#008a68;">
+
+                    favorite
+
+                  </span>
+
+                  {{else}}
+
+                  <span class="material-icons">
+
+                    favorite_border
+
+                  </span>
+
+                  {{/if}}
+
+                </button>
+
+                <span>{{iscount}}</span>
+
+              </form>
+              <form action="/report" method="POST">
+
+                <input class="likeclass" name="reportid" id="reportid" type="text" value="{{_id}}" />
+
+                <button class="like-button likebtn" id="report" type="submit">
+
+                  {{#if isreport}}
+
+                  <span class="material-icons" style="color: red;">
+                    flag
+                  </span>
+
+                  {{else}}
+
+                  <span class="material-icons">
+
+                    outlined_flag
+
+                  </span>
+
+                  {{/if}}
+
+                </button>
+
+                <span>{{iscountreport}}</span>
+
+              </form>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    {{/if}}
+    {{/each}}
+    {{/each}}
+
+    {{#unless postcontent}}
+    <div class="post" id="postboxid">
+
+      <div class="post__body">
+        <div class="post__header">
+          <div class="post__headerDescription">
+            <p>no content available for this pincode </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    {{/unless}}
+  </div>
+  <!-- feed ends -->
+
+  <!-- widgets starts -->
+  <div class="widgets">
+    <div class="widgets__input">
+      <span class="material-icons widgets__searchIcon"> place </span>
+      <form action="/pincodechange" method="post">
+        <input type="number" name="current_pincode" placeholder="Enter Pincode" id="currentpin" minlength="6"
+          maxlength="6" />
+      </form>
+    </div>
+    <div class="sidebar1">
+      <h2>Know Your Area Better</h2>
+    </div>
+    <a href="https://www.google.co.in/maps/search/{{pcode}}+Hospitals" target="_blank">
+      <div class="widgets__widgetContainer sidebarOption">
+        <h2>Hospitals</h2>
+      </div>
+    </a>
+    <a href="https://www.google.co.in/maps/search/{{pcode}}+Banks" target="_blank">
+      <div class="widgets__widgetContainer sidebarOption">
+        <h2>Banks</h2>
+      </div>
+    </a>
+    <a href="https://www.google.co.in/maps/search/{{pcode}}+Malls" target="_blank">
+      <div class="widgets__widgetContainer sidebarOption">
+        <h2>Malls</h2>
+      </div>
+    </a>
+    <a href="https://www.google.co.in/maps/search/{{pcode}}+Theatres" target="_blank">
+      <div class="widgets__widgetContainer sidebarOption">
+        <h2>Theatres</h2>
+      </div>
+    </a>
+    <a href="https://www.google.co.in/maps/search/{{pcode}}+Restaurants+Hotels" target="_blank">
+      <div class="widgets__widgetContainer sidebarOption">
+        <h2>Restaurants & Hotels</h2>
+      </div>
+    </a>
+    <a href="https://www.google.co.in/maps/search/{{pcode}}+Police+Stations" target="_blank">
+      <div class="widgets__widgetContainer sidebarOption">
+        <h2>Police Stations</h2>
+      </div>
+    </a>
+    <a href="https://www.google.co.in/maps/search/{{pcode}}+Petrol+Pumps" target="_blank">
+      <div class="widgets__widgetContainer sidebarOption">
+        <h2>Petrol Pumps</h2>
+      </div>
+    </a>
+    <a href="https://www.google.co.in/maps/search/{{pcode}}+Vaccination+Centers" target="_blank">
+      <div class="widgets__widgetContainer sidebarOption">
+        <h2>Vaccination Centers</h2>
+      </div>
+    </a>
+    <a href="https://www.google.co.in/maps/search/{{pcode}}+Post+Offices" target="_blank">
+      <div class="widgets__widgetContainer sidebarOption">
+        <h2>Post Offices</h2>
+      </div>
+    </a>
+    <a href="https://www.google.co.in/maps/search/{{pcode}}+Salons+And+Spas" target="_blank">
+      <div class="widgets__widgetContainer sidebarOption">
+        <h2>Salons & Spas</h2>
+      </div>
+    </a>
+  </div>
+  <!-- widgets ends -->
+
+  <script>var myusername = {{ dusername }};</script>
+  <script>
+    if (window.history.replaceState) {
+      window.history.replaceState(null, null, window.location.href);
+    }
+    let currentpin = document.getElementById('currentpin');
+    currentpin.value = {{ currentpin }}
+    let localBox = document.getElementById('localboxid');
+    if ({{ currentpin }}== {{ pcode }}) {
+      alert('You are searching for your own area ');
+      window.location.href = "http://localhost:9000/feed";
+
+    }else {
+      localBox.style.display = 'none';
+    }
+  </script>
+
+</body>
+
+</html>

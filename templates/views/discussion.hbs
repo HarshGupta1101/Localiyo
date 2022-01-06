@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Localiyo - Discussion Forum</title>
+    <link rel="stylesheet" href="css/feed.css" />
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/discussion.css" />
+    <link rel="shortcut icon" href="img/newlogo.png" type="image/png">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+        integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+        crossorigin="anonymous" />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+
+<body>
+  <!-- sidebar starts -->
+  <div class="sidebar fixed">
+    <h1><a href="/">Localiyo</a></h1>
+
+    <div class="sidebarOption active">
+      <span class="material-icons"> home </span>
+      <a href="/">
+        <h2>Home</h2>
+      </a>
+    </div>
+
+    <div class="sidebarOption">
+      <span class="material-icons"> post_add </span>
+      <a href="/feed">
+        <h2>Feeds</h2>
+      </a>
+    </div>
+
+    <div class="sidebarOption">
+      <span class="material-icons"> forum </span>
+      <a href="/discussion">
+        <h2>Discussion Forum</h2>
+      </a>
+    </div>
+
+    <div class="sidebarOption">
+      <span class="material-icons"> perm_identity </span>
+      <a href="/profile">
+        <h2>Profile</h2>
+      </a>
+    </div>
+
+    <div class="sidebarOption">
+      <span class="material-icons"> feed </span>
+      <a href="/news">
+        <h2>General News</h2>
+      </a>
+    </div>
+
+    <form action="/logout">
+      <button class="sidebar__local">Sign Out</button>
+    </form>
+
+  </div>
+  <!-- sidebar ends -->
+    <div class="offset-3">
+      <div class="username">
+      <h2>@{{dusername}}</h2>
+    </div>
+      <div class="create-discussion">
+        <div class="forum_head">
+         <h2>Create A Discussion Forum !</h2>
+       </div>
+        {{!-- create dicussion --}}
+        <div class="localBox1">
+            <form action='/newdiscussion' method="POST">
+                <div class="localbox__input">
+                    <img src='data:"image/jpeg";base64,{{profilephoto}}' alt="" />
+                    <div>
+                        <input id="title" name="ftitle" placeholder="Title"></input>
+                        <textarea class="textarea" name="fdescribe" placeholder="Add Description"></textarea>
+                    </div>
+                </div>
+                <button type="submit" class="localBox__localButton">Create</button>
+            </form>
+        </div>
+
+
+        </div>
+
+                <div class="disfor">
+      <h2>Join Other Discussions</h2>
+    </div>
+
+        <div class="container mt-3 d-flex justify-content-center">
+            <div class="row d-flex justify-content-center">
+                <div class="col-md-11">
+                    <div class="text-left">
+                        {{!-- <h6>All comment(5)</h6> --}}
+
+                    </div>
+                    {{!-- card1 --}}
+                    {{#each forumdetail}}
+                    {{#each this}}
+                    {{#if fcontent}}
+                    <form action="/gotocomment" method="post">
+                        <div class="discussion_card card p-3 mb-4 col-15">
+                            <h4>{{ftitle}}</h4>
+                            <input class="titleclass" name="forumid" id="forumid" type="text" value='{{_id}}'>
+                            <div class="d-flex flex-row"> 
+                                <img src='data:"image/jpeg";base64,{{forumsuerphoto}}' height="40"
+                                    width="40" class="rounded-circle">
+                                    {{!-- <img src="https://i.imgur.com/dwiGgJr.jpg" height="40"
+                                    width="40" class="rounded-circle"> --}}
+                                <div class="d-flex flex-column ms-2">
+                                    <h6 class="mb-1 text-primary">{{creator}}</h6>
+                                    <p class="comment-text">{{fcontent}}</p>
+                                </div>
+                            </div>
+                            <div class="d-flex justify-content-between">
+                                <div class="d-flex flex-row gap-3 align-items-center">
+                                    <div class="d-flex align-items-center"> <i class="fa fa-heart-o"></i> <span
+                                            class="ms-1 fs-10"></span> </div>
+                                    <div class="d-flex align-items-center"> <i class="fa fa-comment-o"></i> <span
+                                            class="ms-1 fs-10"><button class="comments">Join Discussion</button></span> </div>
+                                </div>
+                                <div class="d-flex flex-row"> <span
+                                        class="text-muted fw-normal fs-10">{{fsincetime}}</span> </div>
+                            </div>
+
+                        </div>
+                    </form>
+                    {{/if}}
+                    {{/each}}
+                    {{/each}}
+                    {{!-- card1 end --}}
+
+                </div>
+            </div>
+        </div>
+    </div>
+    
+
+
+    <script>
+        if (window.history.replaceState) {
+            window.history.replaceState(null, null, window.location.href);
+        }
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="js/discussion.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>
+
+
+{{!-- https://bbbootstrap.com/snippets/bootstrap-comment-box-section-heart-icons-50760844 --}}
+{{!-- https://bbbootstrap.com/snippets/bootstrap-5-comment-section-font-awesome-icons-50145863 --}}

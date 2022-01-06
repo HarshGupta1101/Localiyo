@@ -1,0 +1,250 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Raleway:wght@500;600;700&display=swap");
+
+body {
+  display: flex;
+  height: 100vh;
+  max-width: 1300px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 10px;
+}
+
+/* .sidebar h1 a{
+    font-size: 2rem;
+    font-family: 'Playfair Display', serif;
+}
+
+.sidebar{
+    position: fixed;
+    height: 100vh;
+    border-right: 1px solid hsl(190, 64%, 18%);
+} */
+
+.sidebar h2 {
+  color: hsl(190, 64%, 18%);
+  text-align: center;
+  
+}
+
+h1{
+    line-height: 0;
+    margin-bottom: 25px;
+    padding-bottom: 0;
+    margin-top: 30px;
+}
+
+h2{
+    line-height: 0;
+    margin: 0;
+    padding-bottom: 0;
+}
+
+div h2{
+    margin-bottom: 10px;
+}
+ 
+h1 a:hover {
+    color: hsl(190, 64%, 18%);
+    text-decoration: none;
+}
+
+.sidebarOption {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.sidebarOption .material-icons,
+.fa-localiyo {
+  padding: 20px;
+}
+
+.sidebarOption h2 {
+  font-weight: 600;
+  font-size: 20px;
+  margin-right: 20px;
+  font-family: 'New Times Roman';
+}
+
+.sidebarOption:hover {
+  background-color: #f5f8fa;
+  border-radius: 30px;
+  color: var(--localiyo-color);
+  transition: color 100ms ease-out;
+}
+
+.sidebarOption.active {
+  color: var(--localiyo-color);
+}
+
+.sidebarOption a {
+  text-decoration: none;
+  color: black;
+}
+
+.sidebar__local {
+  width: 100%;
+  background-color: var(--localiyo-color);
+  border: none;
+  color: white;
+  font-weight: 900;
+  border-radius: 30px;
+  height: 50px;
+  margin-top: 20px;
+}
+
+.sidebar {
+  border-right: 1px solid var(--localiyo-background);
+  flex: 0.2;
+  min-width: 250px;
+  margin-top: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.currentpage {
+  background-color: var(--localiyo-background);
+  border-radius: 30px;
+}
+
+.brand {
+  margin-bottom: 50px;
+}
+
+.localBox1 {
+  padding-bottom: 10px;
+  padding-right: 10px;
+  width: 546px;
+}
+
+.card {
+  -webkit-box-shadow: 0 2px 3px rgba(0, 0, 0, 0.03);
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.03);
+}
+
+.titleclass {
+  display: none;
+}
+
+.disfor{
+    text-align: center;
+    position: sticky;
+    background-color: white;
+    z-index: 100;
+    font-size: large;
+    border: 2px solid var(--localiyo-background);
+    padding: 25px 25px 25px 25px;
+    font-size: 10px;
+    font-weight: 800;
+    margin-top: 20px;
+    margin-bottom: 40px;
+}
+
+.create-discussion {
+  border: 1px solid hsl(190, 64%, 18%);
+  border-radius: 20px;
+  width: 820px;
+  margin-left: 75px;
+  padding-left: 50px;
+  padding-right: 50px;
+  padding-top: 25px;
+  padding-bottom: 5px;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+
+.comment-text {
+  font-size: 12px;
+}
+
+.fs-10 {
+  font-size: 12px;
+}
+
+#title {
+  margin-bottom: 20px;
+  border: 0.001rem solid black;
+  border-radius: 5px;
+  padding: 5px;
+  height: 30px;
+  display: block;
+  width: 480px;
+  margin-left: 15px;
+}
+
+/* .sidebarOption h2{
+    font-weight:600;
+    color: hsl(190, 64%, 18%);
+    text-decoration: none;
+} */
+
+.material-icons {
+  color: hsl(190, 64%, 18%);
+  text-decoration: none;
+}
+
+.username{
+    position: sticky;
+    background-color: white;
+    z-index: 100;
+    font-size: large;
+    border: 2px solid var(--localiyo-background);
+    padding: 25px 25px 25px 25px;
+    font-size: 10px;
+    font-weight: 800;
+    margin-top: 20px;
+}
+
+.forum_head{
+    top: 0;
+    background-color: white;
+    z-index: 100;
+    font-size: large;
+    border-bottom: 1px solid var(--localiyo-background);
+    padding: 5px 25px 0px 0px;
+    font-size: 20px;
+    font-weight: 800;
+}
+
+/* .username h2{
+    /* position: sticky; */
+/* top: 0; */
+/* margin-left: 50px;
+    background-color: white;
+    z-index: 100;
+    font-size: large;
+    border: 1px solid var(--localiyo-background);
+    padding: 5px 25px 0px 25px;
+    font-family: 'Playfair Display', serif; */
+
+.localBox__localButton {
+  margin-left: 515px;
+}
+
+.localbox__input {
+  margin-left: 75px;
+}
+
+.discussion_card {
+  border-color: black;
+  border-width: 2px;
+  display: flex;
+}
+
+.comments {
+  border: none;
+  text-decoration: none;
+  background-color: transparent;
+}
+
+.comments:focus {
+  outline: none;
+}
+
+.heading {
+  border-bottom: 2px solid hsl(190, 64%, 18%);
+  font-weight: 500;
+}

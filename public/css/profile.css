@@ -1,0 +1,130 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+.input-style{
+    top: 44%;
+}
+
+input[type="file"] {
+    position: absolute;
+    z-index: -1;
+    top: 15px;
+    left: 20px;
+    font-size: 17px;
+    color: #b8b8b8;
+    }
+    .button-wrap {
+    position: relative;
+    }
+    .button {
+    display: inline-block;
+    background-color: #ffffff;
+    border-radius: 10px;
+    /* border: 4px double #cccccc; */
+    color: hsl(190, 32%, 27%);
+    text-align: center;
+    font-size: 20px;
+    padding: 8px;
+    width: 150px;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 5px;
+    }
+    .button:hover {
+    background-color: #00ab97;
+    }
+
+.container{
+    padding: 1rem;
+    border-radius: 20%;
+    border: 1px solid hsl(190, 32%, 27%);
+}
+
+.profile-container{
+    background-color: hsl(190, 32%, 27%);
+    height: 100%;
+}
+
+.form-control:focus {
+    box-shadow: none;
+    border-color: hsl(190, 32%, 27%);
+}
+
+.profile-button {
+    background: hsl(190, 32%, 27%);
+    box-shadow: none;
+    border: none;
+    color: #fff;
+}
+
+.profile-button:visited{
+    background-color: red;
+}
+
+.edit-image{
+    background-color: #fff;
+    border:1px solid #fff;
+    color: hsl(189, 26%, 29%);
+}
+
+.image-container{
+    height: 150px;
+    width: 150px;
+    margin-top: 25%;
+    background-color: hsl(189, 26%, 29%);
+}
+
+.image-container img{
+    height: 90%;
+    width: 100%;
+    background-size: cover;
+    /* justify-content: center; */
+}
+
+.padding{
+    padding: 0.5rem;
+}
+
+.username{
+    color: white;
+}
+
+.profile-button:hover {
+    background: hsl(189, 26%, 29%);
+}
+
+.profile-button:focus {
+    background: hsl(190, 32%, 27%);
+    box-shadow: none;
+}
+
+.btn:hover{
+    color: #fff;
+}
+
+.profile-button:active {
+    background: linear-gradient(-45deg, #414957 0%, #1f80a0 100%);
+}
+
+.back:hover {
+    color: hsl(190, 32%, 27%);
+    cursor: pointer
+}
+
+.labels {
+    font-size: 11px
+}
+
+.add-experience:hover {
+    background: hsl(190, 32%, 27%);
+    color: #fff;
+    cursor: pointer;
+    border: solid 1px hsl(190, 32%, 27%);
+}

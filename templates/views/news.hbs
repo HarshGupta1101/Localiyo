@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="shortcut icon" href="img/newlogo.png" type="image/png">
+
+  <!--=============== REMIXICONS ===============-->
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+
+  <!--=============== SWIPER CSS ===============-->
+  <link rel="stylesheet" href="css/swiper-bundle.min.css">
+
+  <!--=============== CSS ===============-->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/news.css">
+
+  <title>Localiyo - General News</title>
+</head>
+
+<body>
+  <header class="news-header" id="header">
+    <nav class="nav container news-container">
+      <a href="/" class="nav__logo">Localiyo</a>
+
+      <div class="nav__menu" id="nav-menu">
+        <ul class="nav__list">
+          <li class="nav__item">
+            <a href="/" class="nav__link">Home</a>
+          </li>
+          <li class="nav__item">
+            <a href="/#about" class="nav__link">About</a>
+          </li>
+          <li class="nav__item">
+            <a href="/news" class="nav__link active-link">News</a>
+          </li>
+          <li class="nav__item">
+            <a href="{{nav_ref}}" class="nav__link">{{nav_item}}</a>
+          </li>
+        </ul>
+
+        <!-- <div class="nav__dark">
+          Theme change button
+          <span class="change-theme-name">Switch Mode</span>
+          <i class="ri-moon-line change-theme" id="theme-button"></i>
+        </div> -->
+
+        <i class="ri-close-line nav__close" id="nav-close"></i>
+      </div>
+
+
+      <div class="nav__toggle" id="nav-toggle">
+        <i class="ri-function-line"></i>
+      </div>
+    </nav>
+  </header>
+
+
+  <div class="main-section">
+    <div class="categories" id="categories">
+      <ul type="none">
+        <li><button class="hamburger-close" id="cate-close">
+          </button></li>
+        <li><button class="hamburger " id="hamburger">
+          </button></li>
+        <li>
+          <h2 class="cate-head"><u>Categories :</u></h2>
+        </li> 
+        <li><button type="button" id="cate-all">
+            <h2>View All</h2>
+          </button>
+        </li>
+        <li><button type="button" id="cate-corona">
+            <h2>Corona Virus</h2>
+          </button>
+        </li>
+        <li><button type="button" id="cate-business">
+            <h2>Business</h2>
+          </button>
+        </li>
+        <li><button type="button" id="cate-entertainment">
+            <h2>Entertainment</h2>
+          </button>
+        </li>
+        <li><button type="button" id="cate-politics">
+            <h2>Politics</h2>
+          </button>
+        </li>
+        <li><button type="button" id="cate-sports">
+            <h2>Sports</h2>
+          </button>
+        </li>
+        <li><button type="button" id="cate-technology">
+            <h2>Technology</h2>
+          </button>
+        </li>
+        <li><button type="button" id="cate-weather">
+            <h2>Weather</h2>
+          </button>
+        </li>
+      </ul>
+    </div>
+    <div class="news-container">
+      <br>
+      <div id="news0">
+        <div class="news-type-head" id="cate-head0">
+          <h2 class="cate-name">All</h2>
+          <button type="button" class="see-all" id="see-all0">
+            <h2>View All</h2>
+          </button>
+        </div>
+        <div class="display" id="display0">
+          <div class="accordion" id="newsAccordion0">
+          </div>
+        </div>
+        <button type="button" class="left-button" id="tp0-left">
+          <div class="shape-left" id="shp-left1"></div>
+        </button>
+        <button type="button" class="right-button" id="tp0-right">
+          <div class="shape-right" id="shp-right1"></div>
+        </button>
+      </div>
+      <div id="news1">
+        <div class="news-type-head" id="cate-head1">
+          <h2 class="cate-name">Corona Virus</h2>
+          <button type="button" class="see-all" id="see-all1">
+            <h2>View All</h2>
+          </button>
+        </div>
+        <div class="display" id="display1">
+          <div class="accordion" id="newsAccordion1">
+          </div>
+        </div>
+        <button type="button" class="left-button type2-left" id="tp1-left">
+          <div class="shape-left" id="shp-left2"></div>
+        </button>
+        <button type="button" class="right-button type2-right" id="tp1-right">
+          <div class="shape-right" id="shp-right2"></div>
+        </button>
+      </div>
+
+      <div id="news2">
+        <div class="news-type-head" id="cate-head2">
+          <h2 class="cate-name">Business</h2>
+          <button type="button" class="see-all" id="see-all2">
+            <h2>View All</h2>
+          </button>
+        </div>
+        <div class="display" id="display2">
+          <div class="accordion" id="newsAccordion2">
+          </div>
+        </div>
+        <button type="button" class="left-button type3-left" id="tp2-left">
+          <div class="shape-left"></div>
+        </button>
+        <button type="button" class="right-button type3-right" id="tp2-right">
+          <div class="shape-right"></div>
+        </button>
+      </div>
+
+      <div id="news3">
+        <div class="news-type-head" id="cate-head3">
+          <h2 class="cate-name">Entertainment<h2>
+              <button type="button" class="see-all" id="see-all3">
+                <h2>View All</h2>
+              </button>
+        </div>
+        <div class="display" id="display3">
+          <div class="accordion" id="newsAccordion3">
+          </div>
+        </div>
+        <button type="button" class="left-button type4-left" id="tp3-left">
+          <div class="shape-left"></div>
+        </button>
+        <button type="button" class="right-button type4-right" id="tp3-right">
+          <div class="shape-right"></div>
+        </button>
+      </div>
+
+      <div id="news4">
+        <div class="news-type-head" id="cate-head4">
+          <h2 class="cate-name">Politics<h2>
+              <button type="button" class="see-all" id="see-all4">
+                <h2>View All</h2>
+              </button>
+        </div>
+        <div class="display" id="display4">
+          <div class="accordion" id="newsAccordion4">
+          </div>
+        </div>
+        <button type="button" class="left-button type5-left" id="tp4-left">
+          <div class="shape-left"></div>
+        </button>
+        <button type="button" class="right-button type5-right" id="tp4-right">
+          <div class="shape-right"></div>
+        </button>
+      </div>
+
+
+      <div id="news5">
+        <div class="news-type-head" id="cate-head5">
+          <h2 class="cate-name">Sports<h2>
+              <button type="button" class="see-all" id="see-all5">
+                <h2>View All</h2>
+              </button>
+        </div>
+        <div class="display" id="display5">
+          <div class="accordion" id="newsAccordion5">
+          </div>
+        </div>
+        <button type="button" class="left-button type6-left" id="tp5-left">
+          <div class="shape-left"></div>
+        </button>
+        <button type="button" class="right-button type6-left" id="tp5-right">
+          <div class="shape-right"></div>
+        </button>
+      </div>
+
+
+      <div id="news6">
+        <div class="news-type-head" id="cate-head6">
+          <h2 class="cate-name">Technology</h2>
+          <button type="button" class="see-all" id="see-all6">
+            <h2>View All</h2>
+          </button>
+        </div>
+        <div class="display" id="display6">
+          <div class="accordion" id="newsAccordion6">
+          </div>
+        </div>
+        <button type="button" class="left-button type7-left" id="tp6-left">
+          <div class="shape-left" id="shp-left1"></div>
+        </button>
+        <button type="button" class="right-button type7-right" id="tp6-right">
+          <div class="shape-right" id="shp-right1"></div>
+        </button>
+      </div>
+
+
+      <div id="news7">
+        <div class="news-type-head" id="cate-head7">
+          <h2 class="cate-name">Weather</h2>
+          <button type="button" class="see-all" id="see-all7">
+            <h2>View All</h2>
+          </button>
+        </div>
+        <div class="display" id="display7">
+          <div class="accordion" id="newsAccordion7">
+          </div>
+        </div>
+        <button type="button" class="left-button type8-left" id="tp7-left">
+          <div class="shape-left" id="shp-left1"></div>
+        </button>
+        <button type="button" class="right-button type8-right" id="tp7-right">
+          <div class="shape-right" id="shp-right1"></div>
+        </button>
+      </div>
+      <button type="button" id="back-arrow">
+
+      </button>
+    </div>
+  </div>
+
+  <footer class="footer section">
+    <div class="footer__container container grid">
+      <div class="footer__content grid">
+        <div class="footer__data">
+          <h3 class="footer__title">Localiyo</h3>
+          <p class="footer__description">Get local news,<br> Know your area better
+            and<br>Share updates with others.
+          </p>
+          <div>
+            <a href="https://www.facebook.com/" target="_blank" class="footer__social">
+              <i class="ri-facebook-box-fill"></i>
+            </a>
+            <a href="https://twitter.com/" target="_blank" class="footer__social">
+              <i class="ri-twitter-fill"></i>
+            </a>
+            <a href="https://www.instagram.com/" target="_blank" class="footer__social">
+              <i class="ri-instagram-fill"></i>
+            </a>
+            <a href="https://www.youtube.com/" target="_blank" class="footer__social">
+              <i class="ri-youtube-fill"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="footer__data">
+          <h3 class="footer__subtitle">About</h3>
+          <ul>
+            <li class="footer__item">
+              <a href="index.html#aboutus" class="footer__link">About Us</a>
+            </li>
+            <li class="footer__item">
+              <a href="index.html#about" class="footer__link">Features</a>
+            </li>
+
+          </ul>
+        </div>
+
+        <div class="footer__data">
+          <h3 class="footer__subtitle">Contact Us</h3>
+          <ul>
+            <li class="footer__item">
+              <a href="" class="footer__link">support@localiyo.com </a>
+            </li>
+            <li class="footer__item">
+              <a href="" class="footer__link">+91 99999999XX</a>
+            </li>
+            <li class="footer__item">
+              <a href="" class="footer__link">Mumbai, India.</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer__rights">
+        <p class="footer__copy">&#169; 2021 Localiyo. All rigths reserved.</p>
+        <div class="footer__terms">
+          <a href="#" class="footer__terms-link">Terms & Agreements</a>
+          <a href="#" class="footer__terms-link">Privacy Policy</a>
+        </div>
+      </div>
+    </div>
+    <div class="scroll-up-button" id="scroll-up"></div>
+  </footer>
+
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+  <script src="js/news.js"></script>
+  <!--========== SCROLL UP ==========-->
+  <a href="#" class="scrollup" id="scroll-up">
+    <i class="ri-arrow-up-line scrollup__icon"></i>
+  </a>
+
+
+<!--=============== SCROLL REVEAL===============-->
+<script src="js/scrollreveal.min.js"></script>
+
+<!--=============== SWIPER JS ===============-->
+<script src="js/swiper-bundle.min.js"></script>
+
+<!--=============== MAIN JS ===============-->
+<script src="js/main.js"></script>
+
+</body>
+
+</html>

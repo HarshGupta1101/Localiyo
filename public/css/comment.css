@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
+
+
+body {
+    background: #C8E6C9
+}
+
+.no-box-shadow {
+    box-shadow: none
+}
+
+.no-box-shadow:focus {
+    box-shadow: none
+}
+
+.day {
+    font-size: 9px
+}
+
+a{
+    text-decoration: none;
+}
+
+.heart {
+    border: 1px soild green !important;
+    border-color: green !important;
+    border-radius: 22px
+}
+
+.heart-icon {
+    color: green
+}
+
+.comment-text {
+    font-size: 12px
+}
+
+.delete {
+    font-size: 13px;
+    cursor: pointer
+}
+
+.sidebar h1 a{
+    font-size: 2rem;
+    font-family: 'Playfair Display', serif;
+}
+
+.sidebar{
+    position: fixed;
+    margin-top: 0px;
+    height: 100vh;
+    border-right: 1px solid hsl(190, 64%, 18%);
+}
+
+.currentpage{
+    background-color: var(--localiyo-background);
+    border-radius: 30px;
+}
+
+.brand{
+    margin-bottom: 50px;
+}
+
+
+.sidebarOption h2{
+    font-weight:600;
+    color: hsl(190, 64%, 18%);
+    text-decoration: none;
+}
+
+.material-icons{
+    color: hsl(190, 64%, 18%);
+    text-decoration: none;
+}
+
+.main-cont{
+    margin-left: 300px;
+}
+
+.likebutton{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+    border: none;
+}
+
+.likebutton:focus{
+    outline: none;
+}
+
+.discussion-card{
+    background-color:#e6ecf0;
+    
+}
+
+.comments-container{
+    background-color: #c3def091;
+}
+
+.bg-color{
+    background-color: #dae4e6;
+}

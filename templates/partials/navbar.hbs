@@ -1,0 +1,34 @@
+<header class="header" id="header">
+        <nav class="nav container">
+            <a href="index.hbs" class="nav__logo">Localiyo</a>
+
+            <div class="nav__menu" id="nav-menu">
+                <ul class="nav__list">
+                    <li class="nav__item">
+                        <a href="#home" class="nav__link active-link">Home</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#about" class="nav__link">About</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="/news" class="nav__link">News</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="{{navbar_ref}}" class="nav__link">{{navbar_item}}</a>
+                    </li>
+                </ul>
+
+                <div class="nav__dark">
+                    <!-- Theme change button -->
+                    <span class="change-theme-name">Switch Mode</span>
+                    <i class="ri-moon-line change-theme" id="theme-button"></i>
+                </div>
+
+                <i class="ri-close-line nav__close" id="nav-close"></i>
+            </div>
+
+            <div class="nav__toggle" id="nav-toggle">
+                <i class="ri-function-line"></i>
+            </div>
+        </nav>
+    </header>
